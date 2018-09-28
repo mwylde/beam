@@ -175,6 +175,10 @@ public class FlinkStreamingPortablePipelineTranslator
     translatorMap.put(ExecutableStage.URN, this::translateExecutableStage);
     translatorMap.put(PTransformTranslation.RESHUFFLE_URN, this::translateReshuffle);
 
+
+    TestStreamingPortableTranslation testTranslations = new TestStreamingPortableTranslation();
+    testTranslations.addTo(translatorMap);
+
     this.urnToTransformTranslator = translatorMap.build();
   }
 
